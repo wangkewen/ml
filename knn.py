@@ -48,3 +48,4 @@ def knntest():
     print("Prediction Accuracy ", 1.0*hit/n)
 if __name__ == '__main__':
     knntest()
+
