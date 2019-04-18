@@ -2,7 +2,25 @@ import numpy as np
 class Emsemble:
     def __init__(self):
 	print("pseudo code")
-   
+
+
+    #https://blog.csdn.net/u010665216/article/details/78382984
+    #https://blog.csdn.net/v_july_v/article/details/7624837
+    def SVM(x, y):
+        print("support vector machine")
+        #find a hyperplane to maximize the margin of the classifier
+        # hyperplane: f = wTx + b
+        # margin r = |wTx + b| / ||w||
+        # maximize (min(r)) => minimize ||w||^2
+        # min(1/2)*||w||^2, constraint: y(wTx+b) >= 1
+        # using lagrange multipliers
+        # L(w,b,a) = (1/2)*||w||^2 + sum(a*(1-y(wTx+b)))
+        # w = sum(ayx)
+        # kernel transform, kernel function g(x): 
+        #    f = sum(ayx)Tx + b
+        #    => f = sum(ayg(x))Tg(x) + b
+    
+
     #https://lethalbrains.com/learn-ml-algorithms-by-coding-decision-trees-439ac503c9a4
     #https://blog.csdn.net/weixin_40604987/article/details/79296427
     def decisionTree(x, y, features):
