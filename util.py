@@ -25,6 +25,7 @@ def test():
     ddb = np.array([[-1,-1,-1],[0,1,0]])
     print(np.log(100 / dda))
     ddc = dda * ddb
-    print(ddc)
+    print(np.random.permutation(10))
+    print(np.sqrt([i for i in range(10)]))
 if __name__ == "__main__":
     test()
