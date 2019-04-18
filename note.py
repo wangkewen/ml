@@ -29,7 +29,16 @@ class Emsemble:
     def gradientBoostingTree(x, y):
         # number of decision trees of GBT
         n = 30
+        ypred = 0
+        yi = y
+        # y ~ F(x)
+        # loss function
+        # L(y, F(x)) = (1/2)*(y-F(x))^2
+        # Gradient = y-F(x)
+        # Residual h(x) = y-F(x)
         for i in range(n):
-            tree = decisionTree(x, y, [i for i in range(x.shape[1])])
+            tree = decisionTree(x, yi, [j for j in range(x.shape[1])])
             ypredi = tree.predict(x)
-            
+            ypred = ypredi + ypred
+            ei = y - ypred
+            y = ei
