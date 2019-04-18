@@ -2,10 +2,17 @@ import numpy as np
 class Emsemble:
     def __init__(self):
 	print("pseudo code")
+   
+    #https://lethalbrains.com/learn-ml-algorithms-by-coding-decision-trees-439ac503c9a4
     def decisionTree(x, y, features):
         print("create decision tree")
         # x: independent variables
         # y: labels
+        while True:
+            calculate_impurity_score()
+            ig, splitFeature = find_best_split()
+            if ig == 0: break
+            create_branch(splitFeature)
         return tree
     
     #https://towardsdatascience.com/random-forests-and-decision-trees-from-scratch-in-python-3e4fa5ae4249
@@ -32,8 +39,7 @@ class Emsemble:
         ypred = 0
         yi = y
         # y ~ F(x)
-        # loss function
-        # L(y, F(x)) = (1/2)*(y-F(x))^2
+        # loss function  L(y, F(x)) = (1/2)*(y-F(x))^2
         # Gradient = y-F(x)
         # Residual h(x) = y-F(x)
         for i in range(n):
