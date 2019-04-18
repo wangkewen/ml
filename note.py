@@ -4,12 +4,24 @@ class Emsemble:
 	print("pseudo code")
    
     #https://lethalbrains.com/learn-ml-algorithms-by-coding-decision-trees-439ac503c9a4
+    #https://blog.csdn.net/weixin_40604987/article/details/79296427
     def decisionTree(x, y, features):
         print("create decision tree")
         # x: independent variables
         # y: labels
         while True:
             calculate_impurity_score()
+            # find_best_split
+            # for feature in features
+            #     calculate impurity 
+            #         A. gini index: sum(p*(1-p))
+            #         B. entropy: sum(-p*logp)
+            #     im: impurity of parent node
+            #     imk: impurity of each child
+            #     information gain: ig = im - sum(pk * imk), pk=child/data
+            # find best feature to split the data which can achieve max ig
+            # for regression problem, output is the avg(child.y)
+            # for classification problem, output is class number
             ig, splitFeature = find_best_split()
             if ig == 0: break
             create_branch(splitFeature)
